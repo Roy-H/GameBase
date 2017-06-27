@@ -40,7 +40,9 @@
   <ItemGroup>
     <Compile Include="CropManager.cs" />
     <Compile Include="Interface\IManager.cs" />
+    <Compile Include="Interface\ICropBase.cs" />
     <Compile Include="ManagersHolder.cs" />
+    <Compile Include="Objects\Crop\CropBase.cs" />
     <Compile Include="TimeManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
