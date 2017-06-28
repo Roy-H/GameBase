@@ -6,11 +6,12 @@ using System.Text;
 
 namespace farmbase.Objects.Crop
 {
-    public class Crop: CropBase
+    public class Crop: CropBase, IObjectPoolSupport
     {
         private int waterDays;
         private Time growTime;
         private bool isInGrowing;
+        
 
         public Crop(int id):base(id)
         {
@@ -19,6 +20,8 @@ namespace farmbase.Objects.Crop
         #region Properties
         public bool IsInGrowing
         { get { return isInGrowing; } set { isInGrowing = value; } }
+        
+        public bool IsInUsed { get;set;}
 
         #endregion
         #region Methods
@@ -30,6 +33,7 @@ namespace farmbase.Objects.Crop
 
         public void Grow()
         {
+            IsInUsed = true;
             isInGrowing = true;
             growTime = TimeManager.Instace.CurrentTime;
         }
@@ -44,6 +48,7 @@ namespace farmbase.Objects.Crop
 
         public void Destroy()
         {
+            IsInUsed = false;
             isInGrowing = false;
             growTime = null;
         }

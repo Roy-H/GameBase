@@ -49,6 +49,7 @@ namespace farmbase
 
             //read manager from config file,here;
             Register(TimeManager.Instace);
+            
         }
     }
 }
